@@ -1,0 +1,121 @@
+package com.ffusion.tasks.alerts;
+
+public abstract interface Task
+  extends com.ffusion.tasks.Task
+{
+  public static final String ALERTSSERVICE = "com.ffusion.services.Alerts";
+  public static final String ALERT = "Alert";
+  public static final String ALERTS = "Alerts";
+  public static final String LOGMESSAGES = "LogMessages";
+  public static final String ALERTSENT = "AlertSent";
+  public static final String CHECKED = "checked";
+  public static final String SUBJECT = "subject";
+  public static final String SECUREALERT = "SecureAlert";
+  public static final String DELIVERYINFO1 = "DeliveryInfo1";
+  public static final String DELIVERYINFO2 = "DeliveryInfo2";
+  public static final String DELIVERYINFO1TO = "DeliveryInfo1To";
+  public static final String DELIVERYINFO2TO = "DeliveryInfo2To";
+  public static final String ALERTTYPE = "AlertType";
+  public static final String POSITIVEPAY = "PositivePay";
+  public static final String ACCOUNTBALANCE = "AccountBalance";
+  public static final String PAYMENTAPPROVALS = "PaymentApprovals";
+  public static final String BANKMESSAGE = "BankMessage";
+  public static final String TRANSACTION = "Transaction";
+  public static final String NSF = "NSF";
+  public static final String PENDINGCHECK = "PendingCheck";
+  public static final String MESSAGECENTER = "MessageCenter";
+  public static final String STOCKPORTFOLIO = "StockPortfolio";
+  public static final String PROCESSSTOCKPORTFOLIO = "ProcessStockPortfolio";
+  public static final String BALANCECHECK = "BalanceCheck";
+  public static final String ACCOUNTSUMMARY = "ACCOUNTSUMMARY";
+  public static final String TOBESET = "ToBeSet";
+  public static final String TRUE = "True";
+  public static final String FALSE = "False";
+  public static final String USERID = "USERID";
+  public static final String SECUREUSER = "SECUREUSER";
+  public static final String PREFERREDLANGUAGE = "PREFERREDLANGUAGE";
+  public static final String USERNAME = "USERNAME";
+  public static final String USERTYPE = "USERTYPE";
+  public static final String BANKID = "BANKID";
+  public static final String PROFILEID = "PROFILEID";
+  public static final String BUSINESSID = "BUSINESSID";
+  public static final String EMAIL = "Email";
+  public static final String TO = "to";
+  public static final String FROM = "from";
+  public static final String SENDADDRESS = "alert@bank.com";
+  public static final String PRIMARY = "Primary";
+  public static final String BACKUP = "Backup";
+  public static final String ENTITLEMENTID = "ENTITLEMENTID";
+  public static final String MMDDYYYY = "MM/dd/yyyy";
+  public static final String ENDDATE = "01/01/2100";
+  public static final String FUTUREDATE = "01/01/2099";
+  public static final String STARTTIME = "/14:01";
+  public static final String MMDDYYYYHMM = "MM/dd/yyyy/H:mm";
+  public static final String EST = "EST";
+  public static final String DAY = "86400000";
+  public static final String FOURHOUR = "14400000";
+  public static final String APPLICATIONALERTS = "ApplicationAlerts";
+  public static final int ALERTTYPE_BANKMESSAGE = 0;
+  public static final int ALERTTYPE_ACCOUNTBALANCE = 1;
+  public static final int ALERTTYPE_STOCKPORTFOLIO = 2;
+  public static final int ALERTTYPE_NSF = 3;
+  public static final int ALERTTYPE_TRANSACTION = 4;
+  public static final int ALERTTYPE_PAYMENTAPPROVALS = 5;
+  public static final int ALERTTYPE_POSITIVEPAY = 6;
+  public static final int ALERTTYPE_PROCESS_STOCKPORTFOLIO = 7;
+  public static final int ALERTTYPE_TEST_EMAIL = 8;
+  public static final String STOCK = "STOCK";
+  public static final String STOCKS = "STOCKS";
+  public static final String[] MESSAGES = { "Instant Bank Message", "Here are the balance of your account  ", "Here are the price of your stock ", "Insufficient Funds (NSF) Alert", "Here are your transaction  for ", "PaymentApprovals for ", "Positive Pay for " };
+  public static final String[] SUBJECTS = { "Instant Bank Message", "Here are the balance of your account ", "Stock ", "Insufficient Funds (NSF) Alert", "Here are your transaction ", "PaymentApprovals ", "Positive Pay " };
+  public static final int ERROR_NO_ALERTS_SERVICE = 19000;
+  public static final int ERROR_NO_ALERT = 19001;
+  public static final int ERROR_NO_ALERTS = 19002;
+  public static final int ERROR_NO_LOGMESSAGES = 19003;
+  public static final int ERROR_NO_ALERT_PREFERENCES = 19004;
+  public static final int ERROR_TYPE = 19100;
+  public static final int ERROR_PRIORITY = 19101;
+  public static final int ERROR_START_DATE = 19102;
+  public static final int ERROR_END_DATE = 19103;
+  public static final int ERROR_INTERVAL = 19104;
+  public static final int ERROR_TIMEZONE = 19105;
+  public static final int ERROR_APPINFO = 19116;
+  public static final int ERROR_MESSAGE = 19107;
+  public static final int ERROR_DELIVERY = 19108;
+  public static final int ERROR_DELIVERY_ACCOUNTNUMBER = 19109;
+  public static final int ERROR_DELIVERY_MINAMOUNT = 19110;
+  public static final int ERROR_DELIVERY_MAXAMOUNT = 19111;
+  public static final int ERROR_DELIVERY_ONETIME = 19112;
+  public static final int ERROR_USERID = 19113;
+  public static final int ERROR_DATE_IN_FUTURE = 19114;
+  public static final int ERROR_NO_PRIMARY_DESTINATION = 19115;
+  public static final int ERROR_NO_LIMIT_SET = 19116;
+  public static final int ERROR_MIN_GREATER_THAN_MAX = 19117;
+  public static final int ERROR_INVALID_EMAIL = 19118;
+  public static final int ERROR_NO_TICKER_SYMBOL = 19119;
+  public static final int ERROR_DELIVERY_AMOUNT = 19120;
+  public static final int ERROR_CRITERIA = 19121;
+  public static final int ERROR_FINDING_ALERT = 19200;
+  public static final int ERROR_CLASSNAME_NOT_SPECIFIED = 19300;
+  public static final int ERROR_UNABLE_TO_CREATE_SERVICE = 19301;
+  public static final int ERROR_NO_ALERT_SENT = 19302;
+  public static final int ERROR_NO_ALERT_ID = 19303;
+  public static final int ERROR_ALERT_SESSIONNAME_NOT_SET = 19304;
+  public static final int ERROR_ALERTS_COLLECTION_SESSION_NAME_NOT_SET = 19305;
+  public static final int ERROR_DIRECTORY_ID_NOT_SET = 19306;
+  public static final int TASK_ERROR_CONTACT_POINTS_DNE = 19307;
+  public static final int ERROR_DELIVERY_ORDER_ATLEAST_ONE_PRIMARY = 19308;
+  public static final int ERROR_NO_STOCK_IN_PORTFOLIO = 19309;
+  public static final int ERROR_NO_STOCK_SELECTED = 19310;
+  public static final int ERROR_STOCKS_NOT_IN_SESSION = 19311;
+  public static final int ERROR_INVALID_ALERT_MAX_PROPERTY_NAME_LENGTH = 19312;
+  public static final int ERROR_INVALID_ALERT_MAX_PROPERTY_VALUE_LENGTH = 19313;
+  public static final int ERROR_INVALID_ALERT_PROPERTY_NAME = 19314;
+  public static final int ERROR_INVALID_ALERT_PROPERTY_VALUE = 19315;
+}
+
+
+/* Location:           D:\drops\jd\jars\efs.jar
+ * Qualified Name:     com.ffusion.tasks.alerts.Task
+ * JD-Core Version:    0.7.0.1
+ */

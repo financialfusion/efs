@@ -1,0 +1,145 @@
+package com.ffusion.tasks.checkimaging;
+
+import com.ffusion.beans.SecureUser;
+import com.ffusion.csil.CSILException;
+import com.ffusion.csil.core.CheckImaging;
+import com.ffusion.tasks.BaseTask;
+import com.ffusion.tasks.MapError;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Locale;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class DisplayFeeMessage
+  extends BaseTask
+  implements ImageTask
+{
+  protected String messageURL;
+  protected String successURL = null;
+  protected String taskErrorURL = "TE";
+  protected String serviceErrorURL = "SE";
+  protected String nextURL;
+  protected int error;
+  protected String message;
+  protected boolean bizUserFlag = false;
+  protected boolean messageFlag = false;
+  protected Locale locale;
+  
+  public String process(HttpServlet paramHttpServlet, HttpServletRequest paramHttpServletRequest, HttpServletResponse paramHttpServletResponse)
+    throws IOException
+  {
+    String str = "1";
+    HashMap localHashMap1 = null;
+    HashMap localHashMap2 = null;
+    HttpSession localHttpSession = null;
+    SecureUser localSecureUser = null;
+    this.nextURL = this.taskErrorURL;
+    this.error = 0;
+    localHttpSession = paramHttpServletRequest.getSession();
+    this.locale = ((Locale)localHttpSession.getAttribute("java.util.Locale"));
+    localSecureUser = (SecureUser)localHttpSession.getAttribute("SecureUser");
+    if (localSecureUser == null)
+    {
+      this.error = 38;
+      return this.taskErrorURL;
+    }
+    try
+    {
+      localHashMap2 = CheckImaging.getConfigProperties(localSecureUser, localHashMap1);
+      str = (String)localHashMap2.get("IMAGE_FEE_MESSAGE_CODE");
+      if (this.messageFlag)
+      {
+        if ((this.bizUserFlag) && ((str.equals("1")) || (str.equalsIgnoreCase("2")))) {
+          this.message = ((String)localHashMap2.get("IMAGE_FEE_MESSAGE_BIZ"));
+        } else if ((str.equals("2")) || (str.equalsIgnoreCase("3"))) {
+          this.message = ((String)localHashMap2.get("IMAGE_FEE_MESSAGE_RETAIL"));
+        }
+        this.nextURL = this.messageURL;
+      }
+      else
+      {
+        this.nextURL = this.successURL;
+      }
+    }
+    catch (CSILException localCSILException)
+    {
+      this.error = MapError.mapError(localCSILException);
+      this.nextURL = this.serviceErrorURL;
+    }
+    return this.nextURL;
+  }
+  
+  public void setLocale(Locale paramLocale)
+  {
+    if (paramLocale == null) {
+      this.locale = Locale.getDefault();
+    } else {
+      this.locale = paramLocale;
+    }
+  }
+  
+  public Locale getLocale()
+  {
+    return this.locale;
+  }
+  
+  public String getMessage()
+  {
+    return this.message;
+  }
+  
+  public void setMessageFlag(String paramString)
+  {
+    this.messageFlag = Boolean.valueOf(paramString).booleanValue();
+  }
+  
+  public String getMessageFlag()
+  {
+    return String.valueOf(this.messageFlag);
+  }
+  
+  public void setBizUserFlag(String paramString)
+  {
+    this.bizUserFlag = Boolean.valueOf(paramString).booleanValue();
+  }
+  
+  public void setMessageURL(String paramString)
+  {
+    this.messageURL = paramString;
+  }
+  
+  public void setSuccessURL(String paramString)
+  {
+    this.successURL = paramString;
+  }
+  
+  public void setTaskErrorURL(String paramString)
+  {
+    this.taskErrorURL = paramString;
+  }
+  
+  public void setServiceErrorURL(String paramString)
+  {
+    this.serviceErrorURL = paramString;
+  }
+  
+  public boolean setError(int paramInt, HttpSession paramHttpSession)
+  {
+    this.error = paramInt;
+    return false;
+  }
+  
+  public String getError()
+  {
+    return String.valueOf(this.error);
+  }
+}
+
+
+/* Location:           D:\drops\jd\jars\efs.jar
+ * Qualified Name:     com.ffusion.tasks.checkimaging.DisplayFeeMessage
+ * JD-Core Version:    0.7.0.1
+ */

@@ -1,0 +1,23 @@
+package com.ffusion.ffs.bpw.adminEJB;
+
+import org.omg.CORBA.*;
+import java.util.*;
+import java.lang.Object;
+
+public class BPWAutoStartService
+{
+    public void run()
+    {
+        throw new org.omg.CORBA.NO_IMPLEMENT("BPWAutoStart/BPWAutoStart run");
+    }
+
+    public void start()
+    {
+        throw new org.omg.CORBA.NO_IMPLEMENT("BPWAutoStart/BPWAutoStart start");
+    }
+
+    public void stop()
+    {
+        throw new org.omg.CORBA.NO_IMPLEMENT("BPWAutoStart/BPWAutoStart stop");
+    }
+}

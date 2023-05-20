@@ -1,0 +1,38 @@
+
+====== 2021-02-16 17:47:13.951 ======
+MgsID:414d51204243475731415830315320205f4d2ab9242aec74
+RQ:
+<LnkdCIFsInqRq>
+	<MsgRqHdr>
+		<RqUID>CIB210216f626be084c944991</RqUID>
+		<SCId>CBC</SCId>
+		<FuncId>24130000</FuncId>
+		<CustLangPref>En</CustLangPref>
+		<TerminalId>10.0.144.67</TerminalId>
+		<CustId>
+			<CIF>2799</CIF>
+		</CustId>
+	</MsgRqHdr>
+	<Body>
+		<CIF>2799</CIF>
+	</Body>
+</LnkdCIFsInqRq>
+RS:
+<LnkdCIFsInqRs>
+	<MsgRsHdr>
+		<StatusCode>I000000</StatusCode>
+		<RqUID>CIB210216f626be084c944991</RqUID>
+	</MsgRsHdr>
+	<Body>
+		<LnkdCIFList>
+			<LnkdCIFInfo>
+				<CIF>2632</CIF>
+				<FullNameAr>ايمان علي حلمي العنزي</FullNameAr>
+				<FullNameEn>eman ali helmy ALONZI</FullNameEn>
+				<LegalId>1025900604</LegalId>
+				<SAMAStatus>FRZN</SAMAStatus>
+			</LnkdCIFInfo>
+		</LnkdCIFList>
+	</Body>
+</LnkdCIFsInqRs>
+====== 2021-02-16 17:47:14.045 ====== WAITING TIME# 94 Millis

@@ -1,0 +1,117 @@
+package com.ffusion.ffs.bpw.interfaces;
+
+public abstract interface IFXConsts
+{
+  public static final String BPW_CUSTOMERPAYEE_STATUS = "STATUS_";
+  public static final String BPW_CUSTOMERPAYEE_PAYACCT = "PAYACCT";
+  public static final String USD = "USD";
+  public static final String IFX_DTD = "ifx140.dtd";
+  public static final String IFXERR = "IFXERR_";
+  public static final String SUCCESS = "0";
+  public static final String SUCCESS_MSG = "Success";
+  public static final String GENERAL_ERROR = "2000";
+  public static final String IFX_GENERAL_ERROR = "100";
+  public static final String INVALID_AMOUNT = "2012";
+  public static final String AMOUNT_TOO_LOW = "2012";
+  public static final String INVALID_CUST_ACCT_WITH_PAYEE = "10503";
+  public static final String INVALID_PAYEE = "10510";
+  public static final String UNKNOWN_OBJECT_ID = "2018";
+  public static final String INVALID_POSTALCODE = "10513";
+  public static final String UNSUPPORTED_SERVICE = "500";
+  public static final String UNSUPPORTED_MESSAGE = "600";
+  public static final String LOGGING_FAILED = "-1";
+  public static final String REQUESTED_DATE_ADJUSTED = "2170";
+  public static final String MISSING_BANK_ID = "2000";
+  public static final String VERSION_200 = "200";
+  public static final String CODE_GENERAL_DATA_ERROR_200 = "200";
+  public static final String PMT_STATUS = "Pmt_Rs_";
+  public static final String REC_FREQ = "Freq_";
+  public static final String CURCODE = "Cur_Code_";
+  public static final boolean DEFAULT_MODPENDING = false;
+  public static final boolean BUILD_STATUS_AGGR = true;
+  public static final String INVALID_NAME = "10517";
+  public static final String INVALID_ADDRESS = "10502";
+  public static final String INVALID_CITY = "10511";
+  public static final String INVALID_STATE = "10512";
+  public static final String REC_NOT_FOUND = "17020";
+  public static final String PAY_SVC_RQ = "PaySvcRq";
+  public static final String PAY_SVC_RS = "PaySvcRs";
+  public static final String BANK_SVC_RQ = "BankSvcRq";
+  public static final String BANK_SVC_RS = "BankSvcRs";
+  public static final String IFX_2 = "IFX_2";
+  public static final String PRE_VAL_PMTRQ = "PMTRQ";
+  public static final String MEM_NAME_PMTRQ = "PmtRq";
+  public static final String PRE_VAL_PMTCANCRQ = "PMTCANCRQ";
+  public static final String MEM_NAME_PMTCANCRQ = "PmtCancRq";
+  public static final String PRE_VAL_PMTMODCRQ = "PMTMODCRQ";
+  public static final String MEM_NAME_PMTMODCRQ = "PmtModRq";
+  public static final String PRE_VAL_RECPMTCANCRQ = "RECPMTCANCRQ";
+  public static final String MEM_NAME_RECPMTCANCRQ = "RecPmtCancRq";
+  public static final String PRE_VAL_RECPMTADDRQ = "RECPMTRQ";
+  public static final String MEM_NAME_RECPMTADDRQ = "RecPmtRq";
+  public static final String PRE_VAL_RECPMTMODRQ = "RECPMTMODRQ";
+  public static final String MEM_NAME_RECPMTMODRQ = "RecPmtModRq";
+  public static final String PRE_VAL_XFERRQ = "INTRARQ";
+  public static final String MEM_NAME_XFERRQ = "IntraRq";
+  public static final String PRE_VAL_XFERCANCRQ = "INTRACANRQ";
+  public static final String MEM_NAME_XFERCANCRQ = "IntraCanRq";
+  public static final String PRE_VAL_XFERMODCRQ = "INTRAMODRQ";
+  public static final String MEM_NAME_XFERMODCRQ = "IntraModRq";
+  public static final String PRE_VAL_RECXFERCANCRQ = "RECINTRACANRQ";
+  public static final String MEM_NAME_RECXFERCANCRQ = "RecIntraCanRq";
+  public static final String PRE_VAL_RECXFERADDRQ = "RECINTRARQ";
+  public static final String MEM_NAME_RECXFERADDRQ = "RecIntraRq";
+  public static final String PRE_VAL_RECXFERMODRQ = "RECINTRAMODRQ";
+  public static final String MEM_NAME_RECXFERMODRQ = "RecIntraModRq";
+  public static final String PRE_VAL_PAYEEADDRQ = "PAYEERQ";
+  public static final String MEM_NAME_PAYEEADDRQ = "PayeeRq";
+  public static final String PRE_VAL_PAYEEMODRQ = "PAYEEMODRQ";
+  public static final String MEM_NAME_PAYEEMODRQ = "PayeeModRq";
+  public static final String PRE_VAL_PAYEEDELRQ = "PAYEEDELRQ";
+  public static final String MEM_NAME_PAYEEDELRQ = "PayeeDelRq";
+  public static final String ORGCONTACT = "OrgContact";
+  public static final String PERSONAL = "Personal";
+  public static final String CUSTPAYEEREC = "CustPayeeRec";
+  public static final String CUSTPAYEEID = "CustPayeeId";
+  public static final String FSPAYEE = "FSPayee";
+  public static final String STDPAYEEID = "StdPayeeId";
+  public static final boolean DFLT_CAN_PENDING = false;
+  public static final String PMTINFO = "PmtInfo";
+  public static final String RECPMTINFO = "RecPmtInfo";
+  public static final String POSTEDON = "POSTEDON";
+  public static final String DDA = "DDA";
+  public static final String SAVINGS = "SAVINGS";
+  public static final String SDA = "SDA";
+  public static final String CHECKING = "CHECKING";
+  public static final String MONEYMRKT = "MONEYMRKT";
+  public static final String MMA = "MMA";
+  public static final String OTHER_ACCTTYPE = "OTHER";
+  public static final String LEGALNAME = "LegalName";
+  public static final String CONTACTTYPE = "ContactType";
+  public static final String ORIGPMTDUEDT = "OrigPmtDueDt";
+  public static final String BILLREFINFO = "BillRefInfo";
+  public static final String SETTLEMENTMETHOD = "SettlementMethod";
+  public static final String PMTFORMAT = "PmtFormat";
+  public static final String BANKNAME = "BankName";
+  public static final String DEFAULT_CONTACTTYPE = "PERSONAL";
+  public static final String TRUE = "true";
+  public static final String ADD = "add";
+  public static final String MOD = "mod";
+  public static final String DEL = "del";
+  public static final String CAN = "CAN";
+  public static final String PMT = "PMT";
+  public static final String XFER = "XFER";
+  public static final String REFINFO_FROMACCTCUSTID = "FromAcctCustId";
+  public static final String REFINFO_FROMACCTCUSTNAME = "FromAcctCustName";
+  public static final String REFINFO_FROMACCTCUSTTYPE = "FromAcctCustType";
+  public static final String REFINFO_TOACCTCUSTID = "ToAcctCustId";
+  public static final String REFINFO_TOACCTCUSTNAME = "ToAcctCustName";
+  public static final String REFINFO_TOACCTCUSTTYPE = "ToAcctCustType";
+  public static final String REFINFO_TRANSFERPAYMENTTYPE = "TransferPaymentType";
+}
+
+
+/* Location:           D:\drops\jd\jars\bpwcore.jar
+ * Qualified Name:     com.ffusion.ffs.bpw.interfaces.IFXConsts
+ * JD-Core Version:    0.7.0.1
+ */
